@@ -1,0 +1,419 @@
+/* General styling */
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px for easier calculation */
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #523754;
+    font-size: 1.6rem; /* Equivalent to 16px */
+    color: #fff;
+}
+
+/* Header Logo Styling */
+.header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header .logo-text {
+    font-weight: bolder;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+}
+
+.header .logo-text span {
+    color: var(--main-color);
+}
+
+/* Hover and animation effects */
+.header .logo-img:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.header .logo-img {
+    animation: bounce 2s infinite;
+}
+
+/* Scrollbar Styling */
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+/* Main Content Styling */
+section {
+    padding: 5rem 9%;
+}
+
+b {
+    color: #523754;
+}
+
+/* Color Variables */
+:root {
+    --main-color: #C8A9CB;
+}
+
+/* Event Pages Styling */
+.events-page, .attender-page {
+    padding: 5rem 9%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #773F7C;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.events-page h2, .attender-page h2 {
+    color: #FFFFFF;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.event-list {
+    margin-top: 3rem;
+}
+
+.event-item {
+    background: #FFFFFF;
+    color: #523754;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.event-item:hover {
+    transform: scale(1.05);
+}
+
+.event-item h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.event-item p {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-item a {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.event-item a:hover {
+    color: #523754;
+    text-decoration: underline;
+}
+
+/* Event Form Styling */
+.attender-page form, .organizer .content {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.attender-page label, .organizer form label {
+    font-size: 1.4rem;
+    color: #523754;
+}
+
+.attender-page select, .attender-page button, .organizer form input, .organizer form select {
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    border: 1px solid #523754;
+    background: #FFFFFF;
+    color: #523754;
+}
+/* General Button Styling */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Modify Button */
+.modify-b/* orat.css */
+
+/* General styling */
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px for easier calculation */
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #523754;
+    font-size: 1.6rem; /* Equivalent to 16px */
+    color: #fff;
+}
+
+/* Header Logo Styling */
+.header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header .logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.header .logo-text {
+    font-weight: bolder;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+}
+
+.header .logo-text span {
+    color: var(--main-color);
+}
+
+/* Hover and animation effects */
+.header .logo-img:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.header .logo-img {
+    animation: bounce 2s infinite;
+}
+
+/* Scrollbar Styling */
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+/* Color Variables */
+:root {
+    --main-color: #C8A9CB;
+}
+tn {
+    background-color: #FFA500; /* Orange */
+    margin-right: 10px;
+}
+
+.modify-btn:hover {
+    background-color: #ff7f00;
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #D32F2F; /* Red */
+}
+
+.delete-btn:hover {
+    background-color: #c62828;
+}
+
+/* Delete Event Page Styling */
+#delete-event-page {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#delete-event-page .content {
+    background: #773F7C;
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+#delete-event-page h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#delete-event-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#delete-event-page label {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+#delete-event-page select, #delete-event-page button {
+    padding: 1rem;
+    font-size: 1.6rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    border: none;
+    background: #523754;
+    color: white;
+    cursor: pointer;
+}
+
+#delete-event-page button:hover {
+    background: #C8A9CB;
+}
+
+.attender-page button, .organizer form button {
+    background: var(--main-color);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.attender-page button:hover, .organizer form button:hover {
+    background: #773F7C;
+}
+.organizer form button{
+    padding: 1rem;
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    background: var(--main-color);
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+/* Event Form Button Styling */
+#line_btn {
+    background: #523754;
+    color: #FFFFFF;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    transition: background 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+#line_btn:hover {
+    background: #C8A9CB;
+}
+
+#line_btn.modify {
+    background: #C8A9CB;
+    color: #523754;
+}
+
+#line_btn.modify:hover {
+    background: #773F7C;
+    color: #FFFFFF;
+}
+
+#line_btn.delete {
+    background: #523754;
+    color: #FFFFFF;
+}
+
+#line_btn.delete:hover {
+    background: #773F7C;
+    color: #FFFFFF;
+}
+
+/* Event Item Adjustments */
+.event-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Event List Styling */
+#event-list {
+    margin-top: 20px;
+}

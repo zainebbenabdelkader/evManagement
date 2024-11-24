@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attender - Eventify</title>
+    <link rel="stylesheet" href="css/orat.css">
+    <style>
+        /* Attender Page Styling */
+        .attender-page {
+            padding: 5rem 9%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #773F7C;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .attender-page h2 {
+            color: #FFFFFF;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .event-list {
+            margin-top: 3rem;
+        }
+
+        .event-item {
+            background: #FFFFFF;
+            color: #523754;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            border: 1px solid #523754;
+        }
+
+        .event-item:hover {
+            transform: scale(1.05);
+        }
+
+        .event-item h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #773F7C;
+        }
+
+        .event-item p {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Button for attending event */
+        .event-item button.attend-btn {
+            background-color: #773F7C;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1.4rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .event-item button.attend-btn:hover {
+            background-color: #6a2e66;
+        }
+
+        .event-item a {
+            font-size: 1.6rem;
+            color: var(--main-color);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .event-item a:hover {
+            color: #523754;
+            text-decoration: underline;
+        }
+
+        /* Attender Form Styling */
+        .attender-page form {
+            background: #FFFFFF;
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .attender-page label {
+            font-size: 1.4rem;
+            color: #523754;
+        }
+
+        /* Style for Select Dropdowns */
+        .attender-page select {
+            padding: 1rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            border-radius: .5rem;
+            border: 1px solid #523754;
+            background: #f4f4f4;
+            color: #523754;
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 12l-4-4h8z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px 12px;
+        }
+
+        .attender-page select:focus {
+            outline: none;
+            border-color: #773F7C;
+            box-shadow: 0 0 10px rgba(119, 63, 124, 0.5);
+        }
+
+        /* Style for Payment Method Dropdown */
+        .payment-method {
+            margin-top: 1rem;
+            font-size: 1.4rem;
+            color: #523754;
+        }
+
+        /* Select dropdown styling for event type */
+        .attender-page select {
+            padding: 1rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            border-radius: .5rem;
+            border: 2px solid #523754;
+            background: #FFFFFF;
+            color: #523754;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        .attender-page select:focus {
+            border-color: #773F7C;
+            outline: none;
+            box-shadow: 0 0 5px rgba(119, 63, 124, 0.6);
+        }
+
+        .attender-page select option {
+            background-color: #f9f9f9;
+            color: #523754;
+        }
+
+        .attender-page select:hover {
+            background-color: #f1f1f1;
+        }
+
+        .attender-page select::-ms-expand {
+            display: none;
+        }
+
+        /* Style for the dropdown arrow */
+        .payment-options {
+            padding: 1rem;
+            font-size: 1.6rem;
+            margin-top: 1rem;
+            border-radius: .5rem;
+            border: 1px solid #523754;
+            background: #f4f4f4;
+            color: #523754;
+            width: 100%;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 12l-4-4h8z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px 12px;
+        }
+
+        .payment-options:focus {
+            outline: none;
+            border-color: #773F7C;
+            box-shadow: 0 0 10px rgba(119, 63, 124, 0.5);
+        }
+
+        .attender-page button,
+        .organizer form button {
+            background: var(--main-color);
+            color: #FFFFFF;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .attender-page button:hover,
+        .organizer form button:hover {
+            background: #773F7C;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">
+        <img src="images/eventify.png" alt="Eventify Logo" class="logo-img">
+        <span class="logo-text">eventify</span>
+    </a>
+</header>
+
+<section class="events-page">
+    <div class="content">
+        <h2>Available Events for Attender</h2>
+
+        <!-- Dropdown for event type selection -->
+        <label for="event-type">Select Event Type:</label>
+        <select id="event-type" name="event-type">
+            <option value="">--Select an Event Type--</option>
+            <option value="all">All Events</option> <!-- Added "All Events" option -->
+            <!-- Dynamically populated event types -->
+        </select>
+
+        <div id="event-list">
+            <!-- Events will be dynamically added here -->
+        </div>
+
+        <!-- Success message -->
+        <div id="success-message" style="display: none;">
+            <p>Selected successfully!</p>
+        </div>
+    </div>
+</section>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+    // Fetch events from localStorage
+    let events = JSON.parse(localStorage.getItem('events')) || [];
+
+    // Group events by type
+    let eventsByType = {};
+    events.forEach(event => {
+        if (!eventsByType[event.type]) {
+            eventsByType[event.type] = [];
+        }
+        eventsByType[event.type].push(event);
+    });
+
+    // Get the event list container and event type select
+    const eventListContainer = document.getElementById('event-list');
+    const eventTypeSelect = document.getElementById('event-type');
+
+    // Populate event types in the dropdown
+    for (const eventType in eventsByType) {
+        const option = document.createElement('option');
+        option.value = eventType;
+        option.innerText = eventType; // Display event type in the dropdown
+        eventTypeSelect.appendChild(option);
+    }
+
+    // Event listener for when an event type is selected
+    eventTypeSelect.addEventListener('change', function() {
+        const selectedType = eventTypeSelect.value;
+        eventListContainer.innerHTML = ''; // Clear the event list
+
+        if (selectedType === 'all') {
+            // Display all events if "All Events" is selected
+            const section = document.createElement('div');  // Use a div instead of section
+            const sectionHeader = document.createElement('h3');
+            sectionHeader.innerText = 'All Events'; // Display the "All Events" section header
+            section.appendChild(sectionHeader);
+
+            events.forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                eventItem.innerHTML = `
+                    <h3>${event.name}</h3>
+<p>Type: ${event.type}</p>
+                    <p>Date: ${event.date}</p>                    <button class="attend-btn">I want to attend</button>
+                `;
+                section.appendChild(eventItem);
+            });
+
+            eventListContainer.appendChild(section); // Append the events to the container
+        } else {
+            // Display only events that match the selected type
+            const filteredEvents = eventsByType[selectedType];
+            filteredEvents.forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                eventItem.innerHTML = `
+                    <h3>${event.name}</h3>
+<p>Type: ${event.type}</p>
+                    <p>Date: ${event.date}</p>                    <button class="attend-btn">I want to attend</button>
+                `;
+                eventListContainer.appendChild(eventItem); // Append to container
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>

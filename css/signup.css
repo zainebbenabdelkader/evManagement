@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;600;700&display=swap');
+
+:root{
+    --main-color:#C8A9CB;
+}
+.header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline from the link */
+}
+
+/* Logo image styling */
+.header .logo-img {
+    width: 50px; /* Adjust size */
+    height: 50px; /* Adjust size */
+    border-radius: 50%; /* Make it round */
+    margin-right: 10px; /* Space between the logo and text */
+    transition: transform 0.3s ease-in-out; /* Smooth transformation */
+}
+
+/* Logo text styling */
+.header .logo-text {
+    font-weight: bolder;
+    color: #FFFFFF;
+    font-size: 2.5rem;
+}
+
+.header .logo-text span {
+    color: var(--main-color);
+}
+
+/* Logo image hover effect */
+.header .logo-img:hover {
+    transform: rotate(360deg) scale(1.2); /* Rotation and scaling effect */
+}
+
+/* Bounce animation for the logo */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.header .logo-img {
+    animation: bounce 2s infinite; /* Apply the bounce animation */
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #FFFFFF;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+
+body{
+    background: #523754;
+    font-size: 1.6rem;
+}
+
+section{
+    padding: 5rem 9%;
+}
+b{color:#523754;}
+.signup .content{
+    background: #773F7C;
+    border-radius: 1rem;
+    padding: 3rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup .content h3{
+    color: #FFFFFF;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.signup form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.signup form label{
+    font-size: 1.4rem;
+    color: #FFFFFF;
+}
+
+.signup form input{
+    padding: 1rem;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+    border: 1px solid #523754;
+    background: #FFFFFF;
+    color: #523754;
+}
+
+.signup form button{
+    padding: 1rem;
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    background: var(--main-color);
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+}
+
+.signup form button:hover{
+    background: #773F7C;
+}
+
+.signup p{
+    color: #FFFFFF;
+    margin-top: 2rem;
+}
+
+.signup p a{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.signup p a:hover{
+    color: #523754;
+}

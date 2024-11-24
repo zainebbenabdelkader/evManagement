@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events - Eventify</title>
+    <link rel="stylesheet" href="css/orat.css">
+</head>
+
+        <style>
+            /* all_events.css */
+    
+            /* Event List Styling */
+            .event-item {
+                margin-bottom: 20px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: #f9f9f9;
+            }
+    
+            #event-list {
+                margin-top: 20px;
+            }
+    
+            /* Event Item Adjustments */
+            .event-item {
+                background: #FFFFFF;
+                color: #523754;
+                border-radius: 1rem;
+                padding: 2rem;
+                margin: 1.5rem 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s ease-in-out;
+            }
+    
+            .event-item:hover {
+                transform: scale(1.05);
+            }
+    
+            .event-item h3 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+    
+            .event-item p {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+    
+            .event-item a {
+                font-size: 1.6rem;
+                color: var(--main-color);
+                font-weight: 600;
+                text-decoration: none;
+            }
+    
+            .event-item a:hover {
+                color: #523754;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="images/eventify.png" alt="Eventify Logo" class="logo-img">
+            <span class="logo-text">eventify</span>
+        </a>
+    </header>
+    
+    <section class="events-page">
+        <div class="content">
+            <h2>All Events</h2>
+            
+            <div id="event-list">
+                <ul>
+                    <!-- Event items will be populated here -->
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // JavaScript to handle events
+    
+        const sampleEvents = [
+            {
+                name: "Tech Conference 2024",
+                type: "Conference",
+                date: "2024-12-15"
+            },
+            {
+                name: "Rock Concert: The Wilds",
+                type: "Concert",
+                date: "2024-11-30"
+            },
+            {
+                name: "Webinar on AI and Future",
+                type: "Webinar",
+                date: "2024-11-20"
+            },
+            {
+                name: "Health and Wellness Expo",
+                type: "Conference",
+                date: "2024-12-05"
+            },
+            {
+                name: "Jazz Night Live",
+                type: "Concert",
+                date: "2024-11-22"
+            }
+        ];
+    
+        // Store the events in localStorage
+        localStorage.setItem('events', JSON.stringify(sampleEvents));
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch events from localStorage
+            let events = JSON.parse(localStorage.getItem('events')) || [];
+    
+            // Get the event list container
+            const eventListContainer = document.getElementById('event-list').querySelector('ul');
+    
+            // Loop through each event and add it to the event list
+            events.forEach(event => {
+                const eventItem = document.createElement('li');
+                eventItem.classList.add('event-item'); // Add class for styling
+    
+                eventItem.innerHTML = `
+                    <h3>${event.name}</h3>
+                    <p>Type: ${event.type}</p>
+                    <p>Date: ${event.date}</p>
+                `;
+    
+                eventListContainer.appendChild(eventItem);
+            });
+        });
+    </script>
+    
+    </body>
+    </html>
